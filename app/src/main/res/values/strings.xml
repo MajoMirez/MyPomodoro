@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MyPomodoro</string>
+    <string name="timer_placeholder">25:00</string>
+    <string name="start">START</string>
+    <string name="config">Config</string>
+    <string name="stats">Stats</string>
+    <string name="stop">STOP</string>
+    <string name="info">***timer type***\nPomodoros completed: 0/4\nComplete Cycles: 0</string>
 </resources>
