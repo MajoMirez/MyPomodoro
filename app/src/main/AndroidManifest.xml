@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Config" />
+        <activity android:name=".Config"
+            android:theme="@style/Base.V7.Theme.AppCompat.Light.Dialog"/>
 
         <service
             android:name=".TimerService"
@@ -25,6 +26,7 @@
         <activity
             android:name=".Preferences"
             android:theme="@style/Base.Theme.AppCompat.Light" />
+
         <activity android:name=".NumberPicker"></activity>
     </application>
 

@@ -53,8 +53,9 @@
             android:dialogTitle="ej 0xff00ff00"
             android:defaultValue="0xff00f000"
             />
-
     </PreferenceCategory>
 
+    <com.example.majo.mypomodoro.Preferences.TimePreference
+    />
 
 </PreferenceScreen>

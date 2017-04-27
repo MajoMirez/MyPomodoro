@@ -95,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
             InfoText.setText(getString(R.string.info)+"\nCiclos completados: "+completedCycles);
         }
 
+        if(view.getId()==R.id.test){
+            Intent intent = new Intent(MainActivity.this, Config.class);
+            startActivity(intent);
+        }
+
     }
 
 
