@@ -20,6 +20,7 @@ public class TimerService extends IntentService {
         int time = Integer.parseInt(time2);
         String type = intent.getStringExtra("TYPE");
 
+
         Log.d(TAG, Integer.toString(time));
         Log.d(TAG, type);
     }

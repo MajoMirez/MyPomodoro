@@ -20,7 +20,12 @@
 
         <service
             android:name=".TimerService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <activity
+            android:name=".Preferences"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity android:name=".NumberPicker"></activity>
     </application>
 
 </manifest>

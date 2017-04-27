@@ -1,0 +1,60 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Ciclos de Pomodoro">
+
+        <EditTextPreference
+            android:key="work_time"
+            android:title="Tiempo de Trabajo"
+            android:summary="(valor)"
+            android:dialogTitle="en minutos"
+            android:inputType="number"
+            android:defaultValue="25"
+            />
+        <EditTextPreference
+            android:key="break_time"
+            android:title="Tiempo de Descanso"
+            android:summary="en minutos"
+            android:dialogTitle="en minutos"
+            android:inputType="number"
+            android:defaultValue="5"
+            />
+        <EditTextPreference
+            android:key="L_break_time"
+            android:title="Tiempo de Descanso Largo"
+            android:summary="en minutos"
+            android:dialogTitle="en minutos"
+            android:inputType="number"
+            android:defaultValue="15"
+            />
+        <EditTextPreference
+            android:key="NPomos"
+            android:title="Pomodoros por ciclo"
+            android:summary="cantidad"
+            android:dialogTitle="Cantidad de Pomodoros por ciclo"
+            android:inputType="number"
+            android:defaultValue="4"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Sonido">
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Colores">
+        <EditTextPreference
+            android:key="C_main"
+            android:title="Color Principal"
+            android:summary="asd"
+            android:dialogTitle="ej 0xff00ff00"
+            android:defaultValue="0xff00f000"
+            />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
