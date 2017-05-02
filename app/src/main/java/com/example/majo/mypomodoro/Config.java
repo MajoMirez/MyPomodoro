@@ -2,8 +2,6 @@ package com.example.majo.mypomodoro;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Bundle;
-import android.app.Activity;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -14,7 +12,7 @@ public class Config extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config);
+        setContentView(R.layout.dialog_npicker);
         numberView=(TextView)findViewById(R.id.textView);
 
         NumberPicker npick= (NumberPicker) findViewById(R.id.nPicker);

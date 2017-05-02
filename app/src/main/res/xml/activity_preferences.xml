@@ -5,9 +5,9 @@
         android:title="Ciclos de Pomodoro">
 
         <EditTextPreference
-            android:key="work_time"
+            android:key="work_time2"
             android:title="Tiempo de Trabajo"
-            android:summary="(valor)"
+            android:summary="(deshabilitado)"
             android:dialogTitle="en minutos"
             android:inputType="number"
             android:defaultValue="25"
@@ -15,15 +15,16 @@
         <EditTextPreference
             android:key="break_time"
             android:title="Tiempo de Descanso"
-            android:summary="en minutos"
+            android:summary="(habilitado)"
             android:dialogTitle="en minutos"
             android:inputType="number"
             android:defaultValue="5"
             />
+
         <EditTextPreference
             android:key="L_break_time"
             android:title="Tiempo de Descanso Largo"
-            android:summary="en minutos"
+            android:summary="(habilitado)"
             android:dialogTitle="en minutos"
             android:inputType="number"
             android:defaultValue="15"
@@ -37,6 +38,16 @@
             android:defaultValue="4"
             />
 
+        <com.example.majo.mypomodoro.NumberPickerPreference
+            android:key="work_time"
+            android:title="TEST"
+            android:summary="(test NumberPicker)"
+            android:dialogMessage="TESTING"
+            android:positiveButtonText="ok"
+            android:negativeButtonText="cancel"
+            android:defaultValue="20"
+        />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -46,16 +57,13 @@
 
     <PreferenceCategory
         android:title="Colores">
-        <EditTextPreference
+        <!--EditTextPreference
             android:key="C_main"
             android:title="Color Principal"
             android:summary="asd"
             android:dialogTitle="ej 0xff00ff00"
             android:defaultValue="0xff00f000"
-            />
+            /-->
     </PreferenceCategory>
-
-    <com.example.majo.mypomodoro.Preferences.TimePreference
-    />
 
 </PreferenceScreen>

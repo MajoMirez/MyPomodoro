@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="200dip"
-    android:layout_height="200dip"
+    android:layout_height="300dip"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:weightSum="1">
@@ -10,21 +10,21 @@
     <NumberPicker
         android:id="@+id/nPicker"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
-        android:layout_weight="0.9">
+        android:layout_height="113dp"
+        android:layout_weight="0.09"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="100dp"
+        android:minHeight="50dp"
+        android:minWidth="50dp"
+        >
     </NumberPicker>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="TextView" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="aceptar" />
+        android:layout_height="29dp"
+        android:text="TextView"
+        android:layout_weight="0.51" />
 
 </LinearLayout>
 
