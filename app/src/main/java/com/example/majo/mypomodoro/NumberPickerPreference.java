@@ -6,10 +6,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.DialogPreference;
+import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.NumberPicker;
+
+import com.example.majo.mypomodoro.Util.MyPreferences;
 
 /*  TODO: Numberpicker generico que pille en internet, hasta ahora solo muestra el Numberpicker
  *  y puedo setear algunos valores, pero no guarda los valores en sharedpreferences
@@ -24,6 +27,7 @@ public class NumberPickerPreference extends DialogPreference {
         super(context, attrs);
         setPositiveButtonText("Set");
         setNegativeButtonText("Cancel");
+        setSummary(String.valueOf(MyPreferences.getValueTest(getContext())));
     }
 
     @Override
@@ -37,7 +41,7 @@ public class NumberPickerPreference extends DialogPreference {
         super.onBindDialogView(v);
         np.setMaxValue(60);
         np.setMinValue(1);
-        np.setValue(25);
+        np.setValue(MyPreferences.getValueTest(getContext()));
     }
 
     @Override
@@ -45,6 +49,8 @@ public class NumberPickerPreference extends DialogPreference {
         super.onDialogClosed(positiveResult);
         if (positiveResult) {
             Minute = np.getValue();
+            setSummary(String.valueOf(Minute));
+            MyPreferences.setValueTest(getContext(), Minute);
         }
     }
 
@@ -65,4 +71,5 @@ public class NumberPickerPreference extends DialogPreference {
             Minute=Integer.parseInt(defaultValue.toString());
         }
     }
+
 }
