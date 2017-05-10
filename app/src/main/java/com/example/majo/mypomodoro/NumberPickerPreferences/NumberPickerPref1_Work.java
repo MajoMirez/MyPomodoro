@@ -1,33 +1,26 @@
-package com.example.majo.mypomodoro;
-
-import static android.content.ContentValues.TAG;
+package com.example.majo.mypomodoro.NumberPickerPreferences;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.preference.DialogPreference;
-import android.preference.Preference;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.widget.NumberPicker;
-
-import com.example.majo.mypomodoro.Util.MyPreferences;
 
 /*  TODO: Numberpicker generico que pille en internet, hasta ahora solo muestra el Numberpicker
  *  y puedo setear algunos valores, pero no guarda los valores en sharedpreferences
  */
 
-public class NumberPickerPreference extends DialogPreference {
+public class NumberPickerPref1_Work extends DialogPreference {
 
     private int Minute = 25;
     private NumberPicker np= null;
 
-    public NumberPickerPreference(Context context, AttributeSet attrs) {
+    public NumberPickerPref1_Work(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setPositiveButtonText("Set");
-        setNegativeButtonText("Cancel");
-        setSummary(String.valueOf(MyPreferences.getValueTest(getContext())));
+        //setPositiveButtonText("Set");
+        //setNegativeButtonText("Cancel");
+        setSummary(String.valueOf(MyPref1_Work.getValueTest(getContext()))+" minutos");
     }
 
     @Override
@@ -41,7 +34,7 @@ public class NumberPickerPreference extends DialogPreference {
         super.onBindDialogView(v);
         np.setMaxValue(60);
         np.setMinValue(1);
-        np.setValue(MyPreferences.getValueTest(getContext()));
+        np.setValue(MyPref1_Work.getValueTest(getContext()));
     }
 
     @Override
@@ -49,8 +42,8 @@ public class NumberPickerPreference extends DialogPreference {
         super.onDialogClosed(positiveResult);
         if (positiveResult) {
             Minute = np.getValue();
-            setSummary(String.valueOf(Minute));
-            MyPreferences.setValueTest(getContext(), Minute);
+            setSummary(String.valueOf(Minute)+" minutos");
+            MyPref1_Work.setValueTest(getContext(), Minute);
         }
     }
 

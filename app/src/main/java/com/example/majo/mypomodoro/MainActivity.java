@@ -20,12 +20,12 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
+
     //TODO: agregar contador de pomos completos
     TextView TimerText, InfoText;
     ImageButton PlayButton, StopButton, NextButton;
     CountDownTimer waitTimer;
     private static final String FORMAT = "%02d:%02d";
-    String Wstr, Bstr, Lstr, Cstr;
     int Wmin, Bmin, Lmin, CPomos;
     int pomoCount=0;
     int completedCycles=0;
@@ -41,25 +41,23 @@ public class MainActivity extends AppCompatActivity {
         StopButton =(ImageButton) findViewById(R.id.textStop);
         NextButton =(ImageButton) findViewById(R.id.textNext);
         InfoText =(TextView)findViewById(R.id.textInfo);
+        displaySharedPreferences();
         StopButton.setVisibility(View.GONE);
         NextButton.setVisibility(View.GONE);
-        displaySharedPreferences();
         setActivityBackgroundColor(CArray[0]);
         TimerText.setText(Integer.toString(Wmin)+":00");
     }
 
+
+
     //TODO: de-hardcode colors
-    private void displaySharedPreferences(){
+    public void displaySharedPreferences(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-        Wstr=prefs.getString("work_time","0");
-        Bstr=prefs.getString("break_time","0");
-        Lstr=prefs.getString("L_break_time","0");
-        Cstr=prefs.getString("NPomos","1");
-        Wmin=Integer.parseInt(Wstr);
-        Bmin=Integer.parseInt(Bstr);
-        Lmin=Integer.parseInt(Lstr);
-        CPomos=Integer.parseInt(Cstr);
-        Log.d(TAG,"Prefs:"+Wmin+" "+Bstr+" "+Lstr+" "+CPomos);
+        Wmin=prefs.getInt("work_time",25);
+        Bmin=prefs.getInt("break_time",5);
+        Lmin=prefs.getInt("long_time",15);
+        CPomos=prefs.getInt("pomo_amount",4);
+        Log.d(TAG,"Wmin: "+Wmin+"\nBmin: "+Bmin+"\nLmin :"+Lmin+"\nCPomos: "+CPomos);
         CArray= new int[4];
         CArray[0]=0xff86d37d; // main
         CArray[1]=0xfff72d31; // working
@@ -74,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(view.getId()==R.id.buttonPlay) {
+            displaySharedPreferences();
             PlayButton.setVisibility(view.GONE);
             StopButton.setVisibility(view.VISIBLE);
             NextButton.setVisibility(view.VISIBLE);
@@ -94,12 +93,15 @@ public class MainActivity extends AppCompatActivity {
             pomoCount=0;
             InfoText.setText(getString(R.string.info)+"\nCiclos completados: "+completedCycles);
         }
+    }
 
-        if(view.getId()==R.id.test){
-            Intent intent = new Intent(MainActivity.this, Config.class);
-            startActivity(intent);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        if (Wmin != prefs.getInt("work_time", 0) && prefs.getInt("work_time",0)!=0) {
+            this.recreate();
         }
-
     }
 
 

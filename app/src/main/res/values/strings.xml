@@ -4,4 +4,7 @@
     <string name="config">C</string>
     <string name="stats">Stats</string>
     <string name="info"> </string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="mins">minutos</string>
 </resources>

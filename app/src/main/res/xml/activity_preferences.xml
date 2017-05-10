@@ -4,59 +4,55 @@
     <PreferenceCategory
         android:title="Ciclos de Pomodoro">
 
-        <EditTextPreference
-            android:key="work_time2"
+        <com.example.majo.mypomodoro.NumberPickerPreferences.NumberPickerPref1_Work
+            android:key="test1"
             android:title="Tiempo de Trabajo"
-            android:summary="(deshabilitado)"
-            android:dialogTitle="en minutos"
-            android:inputType="number"
-            android:defaultValue="25"
-            />
-        <EditTextPreference
-            android:key="break_time"
-            android:title="Tiempo de Descanso"
-            android:summary="(habilitado)"
-            android:dialogTitle="en minutos"
-            android:inputType="number"
-            android:defaultValue="5"
-            />
-
-        <EditTextPreference
-            android:key="L_break_time"
-            android:title="Tiempo de Descanso Largo"
-            android:summary="(habilitado)"
-            android:dialogTitle="en minutos"
-            android:inputType="number"
-            android:defaultValue="15"
-            />
-        <EditTextPreference
-            android:key="NPomos"
-            android:title="Pomodoros por ciclo"
-            android:summary="cantidad"
-            android:dialogTitle="Cantidad de Pomodoros por ciclo"
-            android:inputType="number"
-            android:defaultValue="4"
-            />
-
-        <com.example.majo.mypomodoro.NumberPickerPreference
-            android:key="work_time"
-            android:title="TEST"
             android:summary="(test NumberPicker)"
-            android:dialogMessage="TESTING"
-            android:positiveButtonText="ok"
-            android:negativeButtonText="cancel"
+            android:dialogMessage="Tiempo de trabajo en minutos"
+            android:positiveButtonText="@string/ok"
+            android:negativeButtonText="@string/cancel"
             android:defaultValue="20"
         />
 
+        <com.example.majo.mypomodoro.NumberPickerPreferences.NumberPickerPref3_Long
+            android:key="test2"
+            android:title="Tiempo de Descanso"
+            android:summary="(test NumberPicker)"
+            android:dialogMessage="Tiempo de descanso en minutos"
+            android:positiveButtonText="@string/ok"
+            android:negativeButtonText="@string/cancel"
+            android:defaultValue="10"
+            />
+
+        <com.example.majo.mypomodoro.NumberPickerPreferences.NumberPickerPref4_Pomos
+            android:key="test3"
+            android:title="Tiempo de Descanso Largo"
+            android:summary="(test NumberPicker)"
+            android:dialogMessage="Tiempo de descanso largo en minutos"
+            android:positiveButtonText="@string/ok"
+            android:negativeButtonText="@string/cancel"
+            android:defaultValue="30"
+            />
+
+        <com.example.majo.mypomodoro.NumberPickerPreferences.NumberPickerPref2_Break
+            android:key="test4"
+            android:title="Pomodoros por Ciclo"
+            android:summary="(test NumberPicker)"
+            android:dialogMessage="Cantidad de Pomodoros por ciclo"
+            android:positiveButtonText="@string/ok"
+            android:negativeButtonText="@string/cancel"
+            android:defaultValue="5"
+            />
+
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Sonido">
+        android:title="Sonido (Proximamente)">
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="Colores">
+        android:title="Colores (proximamente... tal vez)">
         <!--EditTextPreference
             android:key="C_main"
             android:title="Color Principal"
