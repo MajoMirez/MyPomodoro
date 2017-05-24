@@ -1,17 +1,21 @@
 package com.example.majo.mypomodoro;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import java.lang.reflect.Array;
 import java.text.CollationElementIterator;
 import java.util.concurrent.TimeUnit;
@@ -49,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     //TODO: de-hardcode colors
     public void displaySharedPreferences(){
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         CArray[2]=0xffffd559; // break
         CArray[3]=0xff86b0ff; // long
     }
+
 
     public void onClick(final View view){
         if (view.getId()==R.id.buttonConfig){
@@ -113,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         NextButton.setVisibility(view.GONE);
     }
 
+
     public void startTimer(final View view, int min, boolean type){
         if (waitTimer!=null){
             waitTimer.cancel();
@@ -134,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         }.start();
         working=type; //true:working, false: break/long break
         InfoText.setText(escriba());
+        sendNotification(view);
     }
 
 
@@ -157,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public void setActivityBackgroundColor(int color) {
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(color);
@@ -177,4 +184,14 @@ public class MainActivity extends AppCompatActivity {
         p2="\nPomodoros completados: "+pomoCount+"/"+CPomos+"\nCiclos Completados: "+completedCycles;
         return p1+p2;
     }
+
+
+    public void sendNotification(View view) {
+
+        Intent i = new Intent(MainActivity.this, TimerService.class);
+        i.putExtra("WORKIN", Boolean.toString(working));
+        this.startService(i);
+
+    }
+
 }
