@@ -18,7 +18,6 @@ Esta app consiste en un cronómetro para realizar la técnica Pomodoro, con una 
 --------
 **To Do's:**
 
-- Configurar service (!!!)
 - agregar configuracion de sonido
 - guardar estadisticas de pomodoros y ciclos completados (?)
 - agregar configuracion de colores (ojala con un picker..)(?)
