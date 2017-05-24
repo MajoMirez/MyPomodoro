@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 waitTimer.cancel();
                 waitTimer = null;
             }
+
             restartTimer(view);
             pomoCount=0;
             InfoText.setText(getString(R.string.info)+"\nCiclos completados: "+completedCycles);
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         PlayButton.setVisibility(view.VISIBLE);
         StopButton.setVisibility(view.GONE);
         NextButton.setVisibility(view.GONE);
+        sendNotification(view,0);
     }
 
 
@@ -139,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         }.start();
         working=type; //true:working, false: break/long break
         InfoText.setText(escriba());
-        sendNotification(view);
+        sendNotification(view,min);
     }
 
 
@@ -186,10 +188,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void sendNotification(View view) {
+    public void sendNotification(View view, int min) {
 
         Intent i = new Intent(MainActivity.this, TimerService.class);
         i.putExtra("WORKIN", Boolean.toString(working));
+        i.putExtra("MIN",Integer.toString(min));
         this.startService(i);
 
     }

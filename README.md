@@ -13,14 +13,13 @@ Esta app consiste en un cronómetro para realizar la técnica Pomodoro, con una 
 - Cronometra pomodoros y sus respectivos descansos. Despues de una cierta cantidad de pomodoros, agrega un descanso largo	
 - Configuraciones:
 	- Se pueden cambiar los intervalos de cada etapa 
-	- se puede cambiar la cantidad de pomodoros por ciclo
+	- Se puede cambiar la cantidad de pomodoros por ciclo
 
 --------
 **To Do's:**
 
-- aplicar cambios despues de configurar (!!!)
-- cambiar configuraciones a numberpicker (!!)
-- agregar configuracion de colores (ojala con un picker..)
+- Configurar service (!!!)
 - agregar configuracion de sonido
-- guardar estadisticas de pomodoros y ciclos completados
+- guardar estadisticas de pomodoros y ciclos completados (?)
+- agregar configuracion de colores (ojala con un picker..)(?)
 - mejorar interfaz (?)
